@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colony Complaint Management</title>
+    <style>
+      /* Add some basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 10px 20px;
+        background: #28a745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Colony Complaint Management</h2>
+      <form action="submit_complaint.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="employee_code">Employee Code:</label>
+        <input type="text" id="employee_code" name="employee_code" required />
+
+        <label for="quarter_no">Quarter No:</label>
+        <input type="text" id="quarter_no" name="quarter_no" required />
+
+        <label for="problem_type">Type of Problem:</label>
+        <select id="problem_type" name="problem_type" required>
+          <option value="" disabled selected>Select a problem type</option>
+          <option value="electrical">Electrical</option>
+          <option value="civil">Civil</option>
+        </select>
+
+        <label for="description">Description of Issue:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="material_required">Material Required:</label>
+        <textarea id="material_required" name="material_required"></textarea>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="" disabled selected>Select status</option>
+          <option value="pending">Pending</option>
+          <option value="in_progress">In Progress</option>
+          <option value="resolved">Resolved</option>
+        </select>
+
+        <label for="remarks">Remarks (if any):</label>
+        <textarea id="remarks" name="remarks"></textarea>
+
+        <button type="submit">Submit Complaint</button>
+      </form>
+      <br />
+      <a href="summary_sheet.php">Monitor Summary Sheet</a>
+    </div>
+  </body>
+</html>
